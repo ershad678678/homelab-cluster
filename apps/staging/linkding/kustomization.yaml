@@ -6,14 +6,15 @@ resources:
   # - cloudflare.yaml
   - tunnel-credentials.yaml
   - linkding-superuser.yaml
+  - ingress.yaml
 
-patches:
-- target:
-    kind: Deployment
-    name: linkding
-  patch: |
-    - op: add
-      path: /spec/template/spec/containers/0/envFrom
-      value:
-        - secretRef:
-            name: linkding-superuser
+# patches:
+# - target:
+#     kind: Deployment
+#     name: linkding
+#   patch: |
+#     - op: add
+#       path: /spec/template/spec/containers/0/envFrom
+#       value:
+#         - secretRef:
+#             name: linkding-superuser
